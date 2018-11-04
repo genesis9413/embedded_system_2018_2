@@ -4,7 +4,7 @@ import time               #import the time library
 class Buzzer(object):
  def __init__(self):
   GPIO.setmode(GPIO.BCM)  
-  self.buzzer_pin = 5 #set to GPIO pin 5
+  self.buzzer_pin = 25 #set to GPIO pin 25
   GPIO.setup(self.buzzer_pin, GPIO.IN)
   GPIO.setup(self.buzzer_pin, GPIO.OUT)
   print("buzzer ready")
@@ -23,9 +23,9 @@ class Buzzer(object):
   cycles = int(duration * pitch)   #the number of waves to produce is the duration times the frequency
 
   for i in range(cycles):    #start a loop from 0 to the variable “cycles” calculated above
-   GPIO.output(self.buzzer_pin, True)   #set pin 18 to high
+   GPIO.output(self.buzzer_pin, True)   #set pin 22 to high
    time.sleep(delay)    #wait with pin 18 high
-   GPIO.output(self.buzzer_pin, False)    #set pin 18 to low
+   GPIO.output(self.buzzer_pin, False)    #set pin 22 to low
    time.sleep(delay)    #wait with pin 18 low
 
  def play(self, tune):
